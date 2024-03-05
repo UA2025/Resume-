@@ -1,0 +1,47 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    /* Adjust the layout for larger screens */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    header, footer {
+        flex-shrink: 0;
+    }
+
+    nav {
+        flex-shrink: 0;
+    }
+
+    main {
+        flex-grow: 1;
+    }
+}

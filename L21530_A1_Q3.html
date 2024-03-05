@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        #tableDiv {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function submitForm() {
+            
+            var fullName = document.getElementById('fullName').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var email = document.getElementById('email').value;
+            var streetAddress = document.getElementById('streetAddress').value;
+            var city = document.getElementById('city').value;
+            var state = document.getElementById('state').value;
+            var zipCode = document.getElementById('zipCode').value;
+            var resume = document.getElementById('resume').value;
+            var coverLetter = document.getElementById('coverLetter').value;
+            var educationLevel = document.getElementById('educationLevel').value;
+            var school = document.getElementById('school').value;
+            var major = document.getElementById('major').value;
+            var graduationYear = document.getElementById('graduationYear').value;
+            var jobTitles = document.getElementById('jobTitles').value;
+            var companyNames = document.getElementById('companyNames').value;
+            var employmentDates = document.getElementById('employmentDates').value;
+            var jobResponsibilities = document.getElementById('jobResponsibilities').value;
+            var relevantSkills = document.getElementById('relevantSkills').value;
+            var certifications = document.getElementById('certifications').value;
+            var startDate = document.getElementById('startDate').value;
+            var workSchedule = document.getElementById('workSchedule').value;
+            var willingnessToRelocate = document.getElementById('willingnessToRelocate').checked;
+            var referenceName = document.getElementById('referenceName').value;
+            var referenceContact = document.getElementById('referenceContact').value;
+            var referenceRelationship = document.getElementById('referenceRelationship').value;
+            var whyThisCompany = document.getElementById('whyThisCompany').value;
+            var agreedToTerms = document.getElementById('agreedToTerms').checked;
+            var privacyPolicyAcknowledged = document.getElementById('privacyPolicyAcknowledged').checked;
+
+            if (fullName === "" || phoneNumber === "" || email === "" || streetAddress === "" || city === "" || state === "" || zipCode === "" || resume === "" || coverLetter === "" || educationLevel === "" || school === "" || major === "" || graduationYear === "" || jobTitles === "" || companyNames === "" || employmentDates === "" || jobResponsibilities === "" || relevantSkills === "" || certifications === "" || startDate === "" || workSchedule === "" || referenceName === "" || referenceContact === "" || referenceRelationship === "" || whyThisCompany === "" || !agreedToTerms || !privacyPolicyAcknowledged) {
+                alert("All fields are required.");
+                return false;
+            }
+
+            var tableData = "<table border='1'><tr><th>Name</th><th>Email</th><th>Phone</th><th>Address</th><th>Resume</th><th>Education</th><th>Employment History</th><th>Skills</th><th>Availability</th><th>References</th><th>Additional Questions</th><th>Consent and Agreement</th></tr>";
+                tableData += "<tr><td>" + fullName + "</td><td>" + email + "</td><td>" + phoneNumber + "</td><td>" + streetAddress + ", " + city + ", " + state + ", " + zipCode + "</td><td>" + resume + "</td><td>" + educationLevel + ", " + school + ", " + major + ", " + graduationYear + "</td><td>" + jobTitles + ", " + companyNames + ", " + employmentDates + ", " + jobResponsibilities + "</td><td>" + relevantSkills + ", " + certifications + "</td><td>" + startDate + ", " + workSchedule + ", " + willingnessToRelocate + "</td><td>" + referenceName + ", " + referenceContact + ", " + referenceRelationship + "</td><td>" + whyThisCompany + "</td><td>" + agreedToTerms + ", " + privacyPolicyAcknowledged + "</td></tr>";
+                tableData += "</table>";
+    
+                document.getElementById('tableDiv').innerHTML = tableData;
+
+            return false;
+        }
+
+        
+
+            
+    </script>
+</head>
+<body>
+    <h1>Job Application Form</h1>
+    <form onsubmit="return submitForm()">
+        <!-- Personal Information -->
+        <h2>Personal Information</h2>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required><br><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="streetAddress">Street Address:</label>
+        <input type="text" id="streetAddress" name="streetAddress" required><br><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required><br><br>
+
+        <label for="zipCode">ZIP Code:</label>
+        <input type="text" id="zipCode" name="zipCode" ><br><br>
+
+        <!-- Resume and Cover Letter -->
+        <h2>Resume and Cover Letter</h2>
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume" required><br><br>
+
+        <label for="coverLetter">Cover Letter:</label>
+        <textarea id="coverLetter" name="coverLetter" required></textarea><br><br>
+
+        <!-- Education -->
+        <h2>Education</h2>
+        <label for="educationLevel">Highest Level of Education Attained:</label>
+        <input type="text" id="educationLevel" name="educationLevel" required><br><br>
+
+        <label for="school">Name of School/University:</label>
+        <input type="text" id="school" name="school" required><br><br>
+
+        <label for="major">Major/Area of Study:</label>
+        <input type="text" id="major" name="major" required><br><br>
+
+        <label for="graduationYear">Graduation Year:</label>
+        <input type="text" id="graduationYear" name="graduationYear" required><br><br>
+
+        <!-- Employment History -->
+        <h2>Employment History</h2>
+        <label for="jobTitles">Previous Job Titles:</label>
+        <input type="text" id="jobTitles" name="jobTitles" ><br><br>
+
+        <label for="companyNames">Company Names:</label>
+        <input type="text" id="companyNames" name="companyNames" ><br><br>
+
+        <label for="employmentDates">Employment Dates:</label>
+        <input type="text" id="employmentDates" name="employmentDates" ><br><br>
+
+        <label for="jobResponsibilities">Job Responsibilities:</label>
+        <textarea id="jobResponsibilities" name="jobResponsibilities" ></textarea><br><br>
+
+        <!-- Skills -->
+        <h2>Skills</h2>
+        <label for="relevantSkills">Relevant Skills:</label>
+        <input type="text" id="relevantSkills" name="relevantSkills" required><br><br>
+
+        <label for="certifications">Certifications:</label>
+        <input type="text" id="certifications" name="certifications" required><br><br>
+
+        <!-- Availability -->
+        <h2>Availability</h2>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" ><br><br>
+
+        <label for="workSchedule">Preferred Work Schedule:</label>
+        <input type="text" id="workSchedule" name="workSchedule" ><br><br>
+
+        <label for="willingnessToRelocate">Willingness to Relocate:</label>
+        <input type="checkbox" id="willingnessToRelocate" name="willingnessToRelocate"><br><br>
+
+        <!-- References -->
+        <h2>References</h2>
+        <label for="referenceName">Reference Name:</label>
+        <input type="text" id="referenceName" name="referenceName"><br><br>
+
+        <label for="referenceContact">Reference Contact Information:</label>
+        <input type="text" id="referenceContact" name="referenceContact" ><br><br>
+
+        <label for="referenceRelationship">Relationship to Applicant:</label>
+        <input type="text" id="referenceRelationship" name="referenceRelationship" ><br><br>
+
+        <!-- Additional Questions -->
+        <h2>Additional Questions</h2>
+        <label for="whyThisCompany">Why do you want to work for this company?</label>
+        <textarea id="whyThisCompany" name="whyThisCompany" ></textarea><br><br>
+
+        <!-- Consent and Agreement -->
+        <h2>Consent and Agreement</h2>
+        <input type="checkbox" id="agreedToTerms" name="agreedToTerms" >
+        <label for="agreedToTerms">I agree to the terms and conditions</label><br><br>
+
+        <input type="checkbox" id="privacyPolicyAcknowledged" name="privacyPolicyAcknowledged" required>
+        <label for="privacyPolicyAcknowledged">I acknowledge the privacy policy</label><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="tableDiv"></div>
+</body>
+</html>
